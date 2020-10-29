@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Product List
+        </div>
+        <div class="card-body">
+            <table class="table table-sm">
+                <thead >
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Rate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.rate}}</td>
+                        <td><a class="btn" [routerLink]="['/products',product.id]">Detail</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

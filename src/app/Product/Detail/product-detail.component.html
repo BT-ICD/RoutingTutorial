@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Product Detail
+        </div>
+        <div class="card-body" *ngIf="product">
+            <div class="row" >
+                <label class="col-md-2">Id</label>
+                <div class="col-md-4">
+                    {{product.id}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Name</label>
+                <div class="col-md-4">
+                    {{product.name}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Rate</label>
+                <div class="col-md-4">
+                    {{product.rate}}
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row d-flex justify-content-end">
+                <input type="button" (click)="backToList()" class="btn btn-outline-primary" value="Back">
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container" *ngIf="!product">
+    <span class="text-warning">No records exist ...</span>
+</div>
