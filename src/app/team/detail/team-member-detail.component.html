@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Team Member Detail (Access data from optional route parameter)
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <label class="col-md-2">Id</label>
+                <div class="col-md-3">
+                    {{id}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Name</label>
+                <div class="col-md-3">
+                    {{name}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Country</label>
+                <div class="col-md-3">
+                    {{this.teamMember?.country}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Mobile</label>
+                <div class="col-md-3">
+                    {{mobile}}
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Date of joining</label>
+                <div class="col-md-3">
+                    {{this.teamMember?.doj |date:'dd-MMM-yyyy'}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

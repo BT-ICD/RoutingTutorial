@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TeamMemberListComponent } from './team/list/team-member-list.component';
+import { TeamMemberDetailComponent } from './team/detail/team-member-detail.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { RouterModule } from '@angular/router';
     ProductListComponent,
     ProductDetailComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TeamMemberListComponent,
+    TeamMemberDetailComponent
     
   ],
   imports: [
@@ -25,6 +29,8 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {path:'products', component:ProductListComponent},
       {path:'products/:id',component:ProductDetailComponent},
+      {path:'team',component:TeamMemberListComponent},
+      {path:'team/:id',component:TeamMemberDetailComponent},
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
