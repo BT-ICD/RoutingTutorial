@@ -18,7 +18,10 @@
                        <td>{{teamMember.name}}</td>
                        <td>{{teamMember.mobile}}</td>
                        <td>{{teamMember.doj|date:'dd-MMM-yyyy'}}</td>
-                       <td><a class="btn btn-outline-primary" [routerLink]="['/team',teamMember.id,{name:teamMember.name, mobile:teamMember.mobile}]">Detail</a></td> 
+                       <td><a class="btn btn-outline-primary" 
+                            [routerLink]="['/team',teamMember.id,{name:teamMember.name, mobile:teamMember.mobile}]" 
+                            [state]="{pid:teamMember.id,pname:teamMember.name}">
+                        Detail</a></td> 
                     </tr>
                 </tbody>
             </table>
