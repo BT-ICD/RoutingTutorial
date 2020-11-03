@@ -4,7 +4,17 @@
             Team Member List
         </div>
         <div class="card-body">
-            <table class="table table-sm">
+            <div class="card-title">
+                <div class="row">
+                    <div class="col-md-2">
+                        Search by Id
+                    </div>
+                    <div class="col-md-4">
+                        <input #filterBy type="number" name="searchTextBox" (keyup)="filterRecords(filterBy.value)" placeholder="Enter Id" value="{{filterForId}}">
+                    </div>
+                </div>
+            </div>
+            <table class="table table-sm table-bordered">
                 <thead>
                     <th>Id</th>
                     <th>Name</th>
@@ -20,11 +30,20 @@
                        <td>{{teamMember.doj|date:'dd-MMM-yyyy'}}</td>
                        <td><a class="btn btn-outline-primary" 
                             [routerLink]="['/team',teamMember.id,{name:teamMember.name, mobile:teamMember.mobile}]" 
-                            [state]="{pid:teamMember.id,pname:teamMember.name}">
+                            [state]="{pid:teamMember.id,pname:teamMember.name}"
+                            [queryParams]="{filterString:filterBy.value}"
+                            >
                         Detail</a></td> 
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-2">
+                    Record Status: {{getFilterStatusString()}}
+                </div>
+            </div>
         </div>
     </div>
 </div>

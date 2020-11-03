@@ -33,13 +33,22 @@ mobile:string;
       this.mobile=params.get('mobile');
 
     });
+
     //To get details of state object passed during routing
-    console.log(history.state);
+    //console.log(history.state);
+    
+    //To read values passed as a queryParams
+    this.route.queryParamMap.subscribe(params=>{
+      let filterByString = params.get('filterString');
+      console.log('filterByString content: '+ filterByString);
+    });
     teams= this.teamMemberDataService.getTeamMembers().filter(obj=>obj.id==this.id);
-    console.log(teams);
+    //console.log(teams);
     if(teams.length==1){
       this.teamMember=teams[0];
     }
   }
-
+  backToList(){
+    this.router.navigate(['/team'],{ queryParams: {}, queryParamsHandling: 'preserve'});
+  }
 }
