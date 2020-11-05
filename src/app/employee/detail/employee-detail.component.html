@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Employee details
+        </div>
+        <div class="card-body" *ngIf="employee">
+            <div class="row">
+                <label class="col-md-2">Id</label>
+                <div class="col-md-4">
+                    <input type="text" name="id" value="{{employee.id}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Name</label>
+                <div class="col-md-4">
+                    <input type="text" name="nane" value="{{employee.name}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Experience</label>
+                <div class="col-md-4">
+                    <input type="text" name="experience" value="{{employee.experience}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Subject</label>
+                <div class="col-md-4">
+                    <input type="text" name="subject" value="{{employee.subject}}">
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <input type="button" class="btn btn-primary" value="Back" (click)="backToList()">
+        </div>
+    </div>
+</div>

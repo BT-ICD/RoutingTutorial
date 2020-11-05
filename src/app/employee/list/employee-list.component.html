@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Employee List - (To share data between component using service)
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Experiece</th>
+                        <th>Subject</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let employee of employeeList">
+                            <td>{{employee.id}}</td>
+                            <td>{{employee.name}}</td>
+                            <td>{{employee.experience}}</td>
+                            <td>{{employee.subject}}</td>
+                            <!-- <td><a class="btn  btn-primary" [routerLink]="['/employee',employee.id]">Detail</a></td> -->
+                            <td><input type="button" class="btn btn-primary" (click)="showDetail(employee)" value="Detail"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</div>

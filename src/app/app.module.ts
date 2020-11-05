@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TeamMemberListComponent } from './team/list/team-member-list.component';
 import { TeamMemberDetailComponent } from './team/detail/team-member-detail.component';
+import { EmployeeListComponent } from './employee/list/employee-list.component';
+import { EmployeeDetailComponent } from './employee/detail/employee-detail.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { TeamMemberDetailComponent } from './team/detail/team-member-detail.comp
     HomeComponent,
     PageNotFoundComponent,
     TeamMemberListComponent,
-    TeamMemberDetailComponent
+    TeamMemberDetailComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent
     
   ],
   imports: [
@@ -31,6 +35,8 @@ import { TeamMemberDetailComponent } from './team/detail/team-member-detail.comp
       {path:'products/:id',component:ProductDetailComponent},
       {path:'team',component:TeamMemberListComponent},
       {path:'team/:id',component:TeamMemberDetailComponent},
+      {path:'employee',component:EmployeeListComponent},
+      {path:'employee/:id',component:EmployeeDetailComponent},
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
