@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Product list - Demo to understand PIPE in Angular
+        </div>
+        <div class="card-body">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Rate</th>
+                    <th>Released</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productList"
+                        [ngClass]="{'row-selected':product?.id==selectedProduct?.id}">
+                        <td>{{product.id}}</td>
+                        <!-- to convert content to upper case -->
+                        <td>{{product.name| uppercase}}</td>
+                        <!-- to convert content to currency -->
+                        <td>{{product.rate | currency }}</td>
+                        <!-- to convert date into custom format -->
+                        <td>{{product.releasedDate|date :'dd-MMM-yyyy' | uppercase}}</td>
+                        <td>{{product.category| productCategory}}</td>
+                        <td> <input type="button" class="btn btn-outline-primary" value="Select"
+                                (click)="selectRow(product)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <input type="button" class="btn btn-outline-primary" value="Detail" (click)="navigateToDetail()">
+        </div>
+    </div>
+</div>

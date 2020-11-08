@@ -12,6 +12,9 @@ import { TeamMemberListComponent } from './team/list/team-member-list.component'
 import { TeamMemberDetailComponent } from './team/detail/team-member-detail.component';
 import { EmployeeListComponent } from './employee/list/employee-list.component';
 import { EmployeeDetailComponent } from './employee/detail/employee-detail.component';
+import { PipeDemoListComponent } from './PipeDemo/list/pipe-demo-list.component';
+import { ProductCategoryPipe } from './PipeDemo/product-category.pipe';
+import { PipeDemoDetailComponent } from './PipeDemo/detail/pipe-demo-detail.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { EmployeeDetailComponent } from './employee/detail/employee-detail.compo
     TeamMemberListComponent,
     TeamMemberDetailComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    PipeDemoListComponent,
+    ProductCategoryPipe,
+    PipeDemoDetailComponent
     
   ],
   imports: [
@@ -37,6 +43,8 @@ import { EmployeeDetailComponent } from './employee/detail/employee-detail.compo
       {path:'team/:id',component:TeamMemberDetailComponent},
       {path:'employee',component:EmployeeListComponent},
       {path:'employee/:id',component:EmployeeDetailComponent},
+      {path:'pipedemo1', component:PipeDemoListComponent},
+      {path:'pipedemo1/:id',component:PipeDemoDetailComponent},
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}

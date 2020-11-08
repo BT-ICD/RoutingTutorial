@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Product Details (Pipe Example)
+        </div>
+        <div class="card-body" *ngIf="product">
+            <form #productForm="ngForm">
+                <!-- id -->
+                <div class="row">
+                    <label class="col-md-2">Id</label>
+                    <div class="col-md-4">
+                        <input type="text" value="{{product.id}}">
+                    </div>
+                </div>
+                <!-- name -->
+                <div class="row">
+                    <label class="col-md-2">Name</label>
+                    <div class="col-md-4">
+                        <input type="text" value="{{product.name|uppercase}}">
+                    </div>
+                </div>
+                <!-- rate -->
+                <div class="row">
+                    <label class="col-md-2">Rate</label>
+                    <div class="col-md-4">
+                        <input type="text" value="{{product.rate}}">
+                    </div>
+                </div>
+                <!-- released -->
+                <div class="row">
+                    <label class="col-md-2">Released Date</label>
+                    <div class="col-md-4">
+                        <input type="text" value="{{product.releasedDate|date :'dd-MMM-yyyy'}}">
+                    </div>
+                </div>
+                <!-- category -->
+                <div class="row">
+                    <label class="col-md-2">Category</label>
+                    <div class="col-md-4">
+                        <input type="text" value="{{product.category| productCategory}}">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <input type="button" class="btn btn-outline-primary" value="Back to list" (click)="backToList()">
+        </div>
+    </div>
+</div>
