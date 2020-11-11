@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Product
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <form #productForm="ngForm"> 
+                    <!-- id -->
+                    <div class="row">
+                        <label class="col-md-4">Id</label>
+                        <div class="col-md-6">
+                            <input type="number" name="id" ngModel #id="ngModel">
+                        </div>
+                    </div>
+                    <!-- name -->
+                    <div class="row">
+                        <label class="col-md-4">Name</label>
+                        <div class="col-md-6">
+                            <input type="text" name="name" ngModel #name="ngModel">
+                        </div>
+                    </div>
+                    <!-- rate -->
+                    <div class="row">
+                        <label class="col-md-4">Rate</label>
+                        <div class="col-md-6">
+                            <input type="number" name="rate" ngModel #rate="ngModel">
+                        </div>
+                    </div>
+                    <!-- released date -->
+                    <div class="row">
+                        <label class="col-md-4">Released</label>
+                        <div class="col-md-6">
+                            <input type="date" name="releasedDate" ngModel #releasedDate="ngModel">
+                        </div>
+                    </div>
+                    <!-- category -->
+                    <div class="row">
+                        <label class="col-md-4">Category</label>
+                        <div class="col-md-6">
+                            <input type="text" name="category" ngModel #category="ngModel">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card-footer">
+            <input type="button" class="btn btn-primary" value="Save" (click)="saveChanges(productForm)">
+        </div>
+    </div>
+</div>

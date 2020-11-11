@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api'
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './Product/List/product-list.component';
@@ -15,6 +17,10 @@ import { EmployeeDetailComponent } from './employee/detail/employee-detail.compo
 import { PipeDemoListComponent } from './PipeDemo/list/pipe-demo-list.component';
 import { ProductCategoryPipe } from './PipeDemo/product-category.pipe';
 import { PipeDemoDetailComponent } from './PipeDemo/detail/pipe-demo-detail.component';
+import { DataStoreService } from './data/data-store.service';
+import { InMemoryProductListComponent } from './InMemoryAPIDemo/list/in-memory-product-list.component';
+import { InMemoryProductDetailComponent } from './InMemoryAPIDemo/detail/in-memory-product-detail.component';
+
 
 
 @NgModule({
@@ -30,12 +36,16 @@ import { PipeDemoDetailComponent } from './PipeDemo/detail/pipe-demo-detail.comp
     EmployeeDetailComponent,
     PipeDemoListComponent,
     ProductCategoryPipe,
-    PipeDemoDetailComponent
+    PipeDemoDetailComponent,
+    InMemoryProductListComponent,
+    InMemoryProductDetailComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataStoreService) ,
     RouterModule.forRoot([
       {path:'products', component:ProductListComponent},
       {path:'products/:id',component:ProductDetailComponent},
@@ -45,6 +55,8 @@ import { PipeDemoDetailComponent } from './PipeDemo/detail/pipe-demo-detail.comp
       {path:'employee/:id',component:EmployeeDetailComponent},
       {path:'pipedemo1', component:PipeDemoListComponent},
       {path:'pipedemo1/:id',component:PipeDemoDetailComponent},
+      {path:'inmemory', component:InMemoryProductListComponent},
+      {path:'inmemory/:id', component:InMemoryProductDetailComponent},
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
