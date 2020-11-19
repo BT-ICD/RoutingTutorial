@@ -1,44 +1,44 @@
 <div class="container">
-    <div class="card">
+    <div class="card" *ngIf="product">
         <div class="card-header">
             Product
         </div>
         <div class="card-body">
             <div class="row">
-                <form #productForm="ngForm"> 
+                <form #productForm="ngForm">
                     <!-- id -->
                     <div class="row">
                         <label class="col-md-4">Id</label>
                         <div class="col-md-6">
-                            <input type="number" name="id" ngModel #id="ngModel">
+                            <input type="number" name="id" [(ngModel)]="product.id">
                         </div>
                     </div>
                     <!-- name -->
                     <div class="row">
                         <label class="col-md-4">Name</label>
                         <div class="col-md-6">
-                            <input type="text" name="name" ngModel #name="ngModel">
+                            <input type="text" name="name" [(ngModel)]="product.name">
                         </div>
                     </div>
                     <!-- rate -->
                     <div class="row">
                         <label class="col-md-4">Rate</label>
                         <div class="col-md-6">
-                            <input type="number" name="rate" ngModel #rate="ngModel">
+                            <input type="number" name="rate" [(ngModel)]="product.rate">
                         </div>
                     </div>
                     <!-- released date -->
                     <div class="row">
                         <label class="col-md-4">Released</label>
                         <div class="col-md-6">
-                            <input type="date" name="releasedDate" ngModel #releasedDate="ngModel">
+                            <input type="date" name="releasedDate" [(ngModel)]="product.releasedDate">
                         </div>
                     </div>
                     <!-- category -->
                     <div class="row">
                         <label class="col-md-4">Category</label>
                         <div class="col-md-6">
-                            <input type="text" name="category" ngModel #category="ngModel">
+                            <input type="text" name="category" [(ngModel)]="product.category">
                         </div>
                     </div>
                 </form>
@@ -46,6 +46,7 @@
         </div>
         <div class="card-footer">
             <input type="button" class="btn btn-primary" value="Save" (click)="saveChanges(productForm)">
+            <input type="button" class="btn btn-outline-primary ml-2" value="List" [routerLink]="['/inmemory']">
         </div>
     </div>
 </div>

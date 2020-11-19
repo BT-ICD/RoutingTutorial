@@ -7,15 +7,15 @@
                 </div>
                 <div class="col-md-10 d-flex justify-content-end">
                     <input type="button" class="btn btn-primary mr-2" value="New" [routerLink]="['/inmemory', 0]">
-                    <input type="button" class="btn btn-primary mr-2" value="Edit">
-                    <input type="button" class="btn btn-primary" value="Delete">
+                    <input type="button" class="btn btn-primary mr-2" value="Edit" (click)="editProduct()">
+                    <input type="button" class="btn btn-primary" value="Delete" (click)="deleteProduct()">
                 </div>
             </div>
-            
-            
+
+
         </div>
         <div class="card-body">
-           
+
             <div class="row">
                 <table class="table table-sm table-bordered">
                     <thead>
@@ -27,13 +27,15 @@
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let product of products" [ngClass]="{'row-selected':product?.id==selectedProduct?.id}">
+                        <tr *ngFor="let product of products"
+                            [ngClass]="{'row-selected':product?.id==selectedProduct?.id}">
                             <td>{{product.id}}</td>
                             <td>{{product.name}}</td>
                             <td>{{product.rate}}</td>
                             <td>{{product.releasedDate|date :'dd-MMM-yyyy'}}</td>
                             <td>{{product.category}}</td>
-                            <td><input type="button" class="btn btn-outline-primary" value="Select" (click)="selectRow(product)"></td>
+                            <td><input type="button" class="btn btn-outline-primary" value="Select"
+                                    (click)="selectRow(product)"></td>
                         </tr>
                     </tbody>
                 </table>
