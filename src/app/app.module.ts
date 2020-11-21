@@ -20,6 +20,7 @@ import { PipeDemoDetailComponent } from './PipeDemo/detail/pipe-demo-detail.comp
 import { DataStoreService } from './data/data-store.service';
 import { InMemoryProductListComponent } from './InMemoryAPIDemo/list/in-memory-product-list.component';
 import { InMemoryProductDetailComponent } from './InMemoryAPIDemo/detail/in-memory-product-detail.component';
+import { AsyncPipeDemoListComponent } from './asyncPipeDemo/list/async-pipe-demo-list.component';
 
 
 
@@ -38,7 +39,8 @@ import { InMemoryProductDetailComponent } from './InMemoryAPIDemo/detail/in-memo
     ProductCategoryPipe,
     PipeDemoDetailComponent,
     InMemoryProductListComponent,
-    InMemoryProductDetailComponent
+    InMemoryProductDetailComponent,
+    AsyncPipeDemoListComponent
     
   ],
   imports: [
@@ -57,6 +59,7 @@ import { InMemoryProductDetailComponent } from './InMemoryAPIDemo/detail/in-memo
       {path:'pipedemo1/:id',component:PipeDemoDetailComponent},
       {path:'inmemory', component:InMemoryProductListComponent},
       {path:'inmemory/:id', component:InMemoryProductDetailComponent},
+      {path:'asyncpipelist', component:AsyncPipeDemoListComponent},
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
