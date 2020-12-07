@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Employee Form
+        </div>
+        <div class="card-body">
+            <form [formGroup]="emplForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <label class="col-md-2">Name:</label>
+                    <div class="col-md-6">
+                        <input type="text" formControlName="firstName">
+                    </div>
+                </div>
+                <div class="row mt-2" formArrayName="skills">
+                    <div  *ngFor="let skill of skills.controls; let i = index">
+                        <div class="row mt-1">
+                            <label class="col-md-4">Skill</label>
+                            <select class="col-md-6" [formControlName]="i">
+                                <option *ngFor="let s of skillData" [ngValue]="s.id">{{s.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row mt-2">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
