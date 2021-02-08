@@ -23,6 +23,8 @@ import { InMemoryProductListComponent } from './InMemoryAPIDemo/list/in-memory-p
 import { InMemoryProductDetailComponent } from './InMemoryAPIDemo/detail/in-memory-product-detail.component';
 import { AsyncPipeDemoListComponent } from './asyncPipeDemo/list/async-pipe-demo-list.component';
 import { RLab1Component } from './ReactiveDemo/rlab1/rlab1.component';
+import { PdfMakeDemoModule } from './pdf-make-demo/pdf-make-demo.module';
+import { PdfDemo1Component } from './pdf-make-demo/pdf-demo1/pdf-demo1.component';
 
 
 
@@ -68,9 +70,11 @@ import { RLab1Component } from './ReactiveDemo/rlab1/rlab1.component';
       // {path:'formarraylab1',component:EmpDetailFormArrayComponent},
       {path:'rlab1',component:RLab1Component},
       {path:'home',component:HomeComponent},
+      {path:'pdfdemo1',component:PdfDemo1Component},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
-    ])
+    ]),
+    PdfMakeDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
