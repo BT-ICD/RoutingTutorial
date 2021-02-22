@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Demo to access camera
+        </div>
+        <div class="card-body">
+            <video #video></video>
+            <div class="row">
+                <canvas #canvas id="canvas" width="640" height="480"></canvas>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary" (click)="onStart()">Start</button>
+            <button type="button" class="btn btn-secondary" (click)="onStop()">Stop</button>
+            <button type="button" class="btn btn-warning" (click)="capture()">Snap Photo</button>
+        </div>
+    </div>
+    <div class="row">
+        <img [src]="currentImg" *ngIf="currentImg">
+    </div>
+</div>

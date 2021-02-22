@@ -27,6 +27,8 @@ import { PdfMakeDemoModule } from './pdf-make-demo/pdf-make-demo.module';
 import { PdfDemo1Component } from './pdf-make-demo/pdf-demo1/pdf-demo1.component';
 import { DynamicFormDemo1Module } from './dynamic-form-demo1/dynamic-form-demo1.module';
 import { MainFormComponent } from './dynamic-form-demo1/main-form/main-form.component';
+import { CameraDemoModule } from './camera-demo/camera-demo.module';
+import { CameraComp1Component } from './camera-demo/camera-comp1/camera-comp1.component';
 
 
 
@@ -56,6 +58,7 @@ import { MainFormComponent } from './dynamic-form-demo1/main-form/main-form.comp
     FormsModule,
     ReactiveFormsModule,
     DynamicFormDemo1Module,
+    CameraDemoModule,
     HttpClientInMemoryWebApiModule.forRoot(DataStoreService) ,
     RouterModule.forRoot([
       {path:'products', component:ProductListComponent},
@@ -74,6 +77,7 @@ import { MainFormComponent } from './dynamic-form-demo1/main-form/main-form.comp
       {path:'home',component:HomeComponent},
       {path:'pdfdemo1',component:PdfDemo1Component},
       {path:'mainform', component:MainFormComponent},
+      {path:'camera1', component:CameraComp1Component},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
     ]),
