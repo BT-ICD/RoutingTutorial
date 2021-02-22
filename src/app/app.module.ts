@@ -25,6 +25,8 @@ import { AsyncPipeDemoListComponent } from './asyncPipeDemo/list/async-pipe-demo
 import { RLab1Component } from './ReactiveDemo/rlab1/rlab1.component';
 import { PdfMakeDemoModule } from './pdf-make-demo/pdf-make-demo.module';
 import { PdfDemo1Component } from './pdf-make-demo/pdf-demo1/pdf-demo1.component';
+import { DynamicFormDemo1Module } from './dynamic-form-demo1/dynamic-form-demo1.module';
+import { MainFormComponent } from './dynamic-form-demo1/main-form/main-form.component';
 
 
 
@@ -53,7 +55,7 @@ import { PdfDemo1Component } from './pdf-make-demo/pdf-demo1/pdf-demo1.component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    DynamicFormDemo1Module,
     HttpClientInMemoryWebApiModule.forRoot(DataStoreService) ,
     RouterModule.forRoot([
       {path:'products', component:ProductListComponent},
@@ -71,10 +73,12 @@ import { PdfDemo1Component } from './pdf-make-demo/pdf-demo1/pdf-demo1.component
       {path:'rlab1',component:RLab1Component},
       {path:'home',component:HomeComponent},
       {path:'pdfdemo1',component:PdfDemo1Component},
+      {path:'mainform', component:MainFormComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
     ]),
-    PdfMakeDemoModule
+    PdfMakeDemoModule,
+    DynamicFormDemo1Module
   ],
   providers: [],
   bootstrap: [AppComponent]
