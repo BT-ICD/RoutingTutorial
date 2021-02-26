@@ -29,6 +29,7 @@ import { DynamicFormDemo1Module } from './dynamic-form-demo1/dynamic-form-demo1.
 import { MainFormComponent } from './dynamic-form-demo1/main-form/main-form.component';
 import { CameraDemoModule } from './camera-demo/camera-demo.module';
 import { CameraComp1Component } from './camera-demo/camera-comp1/camera-comp1.component';
+import { SignalRDemoComponent } from './signal-rdemo/signal-rdemo.component';
 
 
 
@@ -49,7 +50,8 @@ import { CameraComp1Component } from './camera-demo/camera-comp1/camera-comp1.co
     InMemoryProductListComponent,
     InMemoryProductDetailComponent,
     AsyncPipeDemoListComponent,
-    RLab1Component
+    RLab1Component,
+    SignalRDemoComponent
     
   ],
   imports: [
@@ -78,6 +80,7 @@ import { CameraComp1Component } from './camera-demo/camera-comp1/camera-comp1.co
       {path:'pdfdemo1',component:PdfDemo1Component},
       {path:'mainform', component:MainFormComponent},
       {path:'camera1', component:CameraComp1Component},
+      {path:'signar1', component:SignalRDemoComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
     ]),
