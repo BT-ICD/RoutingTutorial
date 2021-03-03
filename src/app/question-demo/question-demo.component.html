@@ -1,0 +1,52 @@
+<div class="container">
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-primary" (click)="addNewAddress()">Add New</button>
+            </div>
+            <div class="card-body">
+                <!-- First Name -->
+                <div class="row">
+                    <div class="col-md-2">
+                        First name
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="firstName" formControlName="firstName" />
+                    </div>
+                </div>
+                <!-- Last Name -->
+                <div class="row">
+                    <div class="col-md-2">
+                        Last name
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="lastName" formControlName="lastName" />
+                    </div>
+                </div>
+                <!-- Address -->
+                <div class="mt-2" formArrayName="addresses" *ngFor="let address of addresses.controls; let i=index">
+                    <div  [formGroupName]="i">
+                        <div class="row mt-1">
+                            <div class="col-md-2">
+                                Area
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" formControlName="area">
+                            </div>
+                            <div class="col-md-2">
+                                City
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" formControlName="city">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

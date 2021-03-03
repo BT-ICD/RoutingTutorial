@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -30,8 +31,9 @@ import { MainFormComponent } from './dynamic-form-demo1/main-form/main-form.comp
 import { CameraDemoModule } from './camera-demo/camera-demo.module';
 import { CameraComp1Component } from './camera-demo/camera-comp1/camera-comp1.component';
 import { SignalRDemoComponent } from './signal-rdemo/signal-rdemo.component';
+import { QuestionDemoComponent } from './question-demo/question-demo.component';
 
-
+import {EditorModule} from 'primeng/editor';
 
 @NgModule({
   declarations: [
@@ -51,16 +53,19 @@ import { SignalRDemoComponent } from './signal-rdemo/signal-rdemo.component';
     InMemoryProductDetailComponent,
     AsyncPipeDemoListComponent,
     RLab1Component,
-    SignalRDemoComponent
+    SignalRDemoComponent,
+    QuestionDemoComponent
     
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     DynamicFormDemo1Module,
     CameraDemoModule,
+    EditorModule,
     HttpClientInMemoryWebApiModule.forRoot(DataStoreService) ,
     RouterModule.forRoot([
       {path:'products', component:ProductListComponent},
@@ -81,6 +86,7 @@ import { SignalRDemoComponent } from './signal-rdemo/signal-rdemo.component';
       {path:'mainform', component:MainFormComponent},
       {path:'camera1', component:CameraComp1Component},
       {path:'signar1', component:SignalRDemoComponent},
+      {path:'question', component:QuestionDemoComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
     ]),
