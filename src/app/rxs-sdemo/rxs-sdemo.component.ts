@@ -11,9 +11,10 @@ import { Observable, Subscription, timer } from 'rxjs';
   styleUrls: ['./rxs-sdemo.component.css']
 })
 export class RxsSDemoComponent implements OnInit, OnDestroy {
-readonly numbers = timer(1000, 1000);
+readonly numbers = timer(60000, 60000);
 numbersSub:Subscription;
 cnt:number=0;
+timeString:string;
   constructor() { }
   ngOnDestroy(): void {
     console.log('on destroy life cycle hook');
@@ -29,14 +30,17 @@ cnt:number=0;
     
   }
   onTimeChange(){
-    if(this.cnt==59){
-      this.cnt=0
-    }
-    else{
-      this.cnt++;
-    }
+    // if(this.cnt==59){
+    //   this.cnt=0
+    // }
+    // else{
+    //   this.cnt++;
+    // }
     
-    console.log(this.cnt);
+    // console.log(this.cnt);
+    let date = new Date();
+    this.timeString='Minute elipsed' + date.getMinutes() + ' - ' + date.getSeconds()
+    console.log(this.timeString);
    }
    buttonClick(){
      alert('dialog tocheck timer');
