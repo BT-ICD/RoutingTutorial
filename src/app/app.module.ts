@@ -34,6 +34,7 @@ import { SignalRDemoComponent } from './signal-rdemo/signal-rdemo.component';
 import { QuestionDemoComponent } from './question-demo/question-demo.component';
 
 import {EditorModule} from 'primeng/editor';
+import { RxsSDemoComponent } from './rxs-sdemo/rxs-sdemo.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {EditorModule} from 'primeng/editor';
     AsyncPipeDemoListComponent,
     RLab1Component,
     SignalRDemoComponent,
-    QuestionDemoComponent
+    QuestionDemoComponent,
+    RxsSDemoComponent
     
   ],
   imports: [
@@ -87,6 +89,7 @@ import {EditorModule} from 'primeng/editor';
       {path:'camera1', component:CameraComp1Component},
       {path:'signar1', component:SignalRDemoComponent},
       {path:'question', component:QuestionDemoComponent},
+      {path:'rxjsdemo', component:RxsSDemoComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',component:PageNotFoundComponent}
     ]),
