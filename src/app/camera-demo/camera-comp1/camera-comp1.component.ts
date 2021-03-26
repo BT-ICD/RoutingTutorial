@@ -10,6 +10,8 @@
  */
 import { isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { CameraDataService } from '../camera-data.service';
+import { IStudentPhotoDTOAdd } from '../icamera-types';
 
 @Component({
   selector: 'app-camera-comp1',
@@ -21,7 +23,7 @@ export class CameraComp1Component implements OnInit, OnDestroy {
 @ViewChild("canvas") canvas: ElementRef;
 captures: Array<any>;
 currentImg:any;
-  constructor(@Inject(PLATFORM_ID) private _platform: Object) { }
+  constructor(@Inject(PLATFORM_ID) private _platform: Object, private cameraDataService:CameraDataService) { }
 
   ngOnInit(): void {
   }
@@ -43,6 +45,25 @@ currentImg:any;
     var context = this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0, 640, 480);
     // this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
     this.currentImg = this.canvas.nativeElement.toDataURL("image/png");
+    // console.log(this.canvas.nativeElement.toDataURL("image/png"));
+
+
+    //To call below method to save to actual server need to comment in memory API implementation
+    //// HttpClientInMemoryWebApiModule.forRoot(DataStoreService) ,
+    //Submit API call to save
+    // const formData  = new FormData();
+    // formData.append('PhotoFile', this.canvas.nativeElement.toDataURL("image/png") );
+    let dataStr = this.canvas.nativeElement.toDataURL("image/png").replace(/^data:image\/(png|jpg);base64,/, "");
+    let studentPhotoDTOAdd: IStudentPhotoDTOAdd= { imageData: dataStr};
+    console.log(studentPhotoDTOAdd)
+    this.cameraDataService.uploadData(studentPhotoDTOAdd).subscribe((data)=>{
+      console.log(data);
+    });
+}
+capture1(){
+  this.cameraDataService.getData().subscribe((data)=>{
+    console.log(data);
+  })
 }
 
 

@@ -68,6 +68,7 @@ import { RxsSDemoComponent } from './rxs-sdemo/rxs-sdemo.component';
     DynamicFormDemo1Module,
     CameraDemoModule,
     EditorModule,
+    //temporary commented to inactivate in memory service - to upload photograph
     HttpClientInMemoryWebApiModule.forRoot(DataStoreService) ,
     RouterModule.forRoot([
       {path:'products', component:ProductListComponent},
