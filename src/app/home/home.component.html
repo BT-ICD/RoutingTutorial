@@ -1,1 +1,32 @@
-<p>home works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Home Component
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Timer 1 
+            
+        </div>
+        <div class="card-body">
+            <app-app-timer #t1 [duration]="duration1"  (onTimerComplete)="ontimer1()" name="t1"></app-app-timer>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary" (click)="start1()" >Start</button>
+            <button type="button" class="btn btn-primary ml-2" (click)="stopt1()" >Stop</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Timer 2 
+        </div>
+        <div class="card-body">
+            <app-app-timer #t2 [duration]="duration2"  (onTimerComplete)="ontimer2()" name="t2"></app-app-timer>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary" (click)="start2()" >Start</button>
+            <button type="button" class="btn btn-primary ml-2" (click)="stopt2()" >Stop</button>
+        </div>
+    </div>
+</div>

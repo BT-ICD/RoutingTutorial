@@ -35,6 +35,7 @@ import { QuestionDemoComponent } from './question-demo/question-demo.component';
 
 import {EditorModule} from 'primeng/editor';
 import { RxsSDemoComponent } from './rxs-sdemo/rxs-sdemo.component';
+import { AppTimerComponent } from './app-timer/app-timer.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RxsSDemoComponent } from './rxs-sdemo/rxs-sdemo.component';
     RLab1Component,
     SignalRDemoComponent,
     QuestionDemoComponent,
-    RxsSDemoComponent
+    RxsSDemoComponent,
+    AppTimerComponent
     
   ],
   imports: [
