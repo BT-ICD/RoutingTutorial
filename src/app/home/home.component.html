@@ -10,7 +10,7 @@
             
         </div>
         <div class="card-body">
-            <app-app-timer #t1 [duration]="duration1"  (onTimerComplete)="ontimer1()" name="t1"></app-app-timer>
+            <app-app-timer #t1 [duration]=duration1  (onTimerComplete)="ontimer1()" name="t1"></app-app-timer>
         </div>
         <div class="card-footer">
             <button type="button" class="btn btn-primary" (click)="start1()" >Start</button>
@@ -22,11 +22,25 @@
             Timer 2 
         </div>
         <div class="card-body">
-            <app-app-timer #t2 [duration]="duration2"  (onTimerComplete)="ontimer2()" name="t2"></app-app-timer>
+            <app-app-timer #t2 [duration]=duration2  (onTimerComplete)="ontimer2()" name="t2"></app-app-timer>
         </div>
         <div class="card-footer">
             <button type="button" class="btn btn-primary" (click)="start2()" >Start</button>
             <button type="button" class="btn btn-primary ml-2" (click)="stopt2()" >Stop</button>
         </div>
+    </div>
+    <div class="card">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="card-header">
+                Form
+            </div>
+            <div class="card-body">
+                <input type="text" class="form-control" formControlName="ename" placeholder="ename">
+                <input type="text" class="form-control" formControlName="job" placeholder="job">
+            </div>
+            <div class="card-footer">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
 </div>
