@@ -1,8 +1,11 @@
-<div class="container">
+<div class="container" #container id='container'>
     <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
         <div class="card">
             <div class="card-header">
                 <button class="btn btn-primary" (click)="addNewAddress()">Add New</button>
+                <button class="btn btn-primary" (click)="openPdf()">PDF</button>
+                <button class="btn btn-primary" (click)="openPdf2()">PDF-2</button>
+                <button class="btn btn-primary" (click)="print()">Print</button>
             </div>
             <div class="card-body">
                 <!-- First Name -->

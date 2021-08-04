@@ -21,6 +21,8 @@
     "@angular/router": "~9.1.7",
     "@aspnet/signalr": "^1.1.4",
     "bootstrap": "^4.5.3",
+    "html-to-pdfmake": "^2.3.1",
+    "jspdf": "^2.3.1",
     "pdfmake": "^0.1.70",
     "primeicons": "^4.1.0",
     "primeng": "^11.3.0-rc.1",
